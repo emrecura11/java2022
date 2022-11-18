@@ -45,8 +45,8 @@ public class InMemoryRepository implements LanguageRepository {
     public void update(Language language, int newId, String newName) {
         for (Language language1 : languages){
             if (language.equals(language1)){
-                language1.setId(newId);
-                language1.setName(newName);
+                getById(language1.getId()).setId(newId);
+                getById(language1.getId()).setName(newName);
             }
         }
 
